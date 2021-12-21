@@ -11,22 +11,24 @@ import {
 
 const STRATEGY_NAME = 'twitter';
 
-export class TwitterStrategy extends PassportStrategy(
-  Strategy,
-  STRATEGY_NAME,
-) {
-    constructor() {
-        const callbackURL = `${BACK_URI}:${START_PORT}/${APP_PREFIX}/${TWITTER_CALLBACK_URI}`;
-        const options = {
-            consumerKey: TWITTER_KEY,
-            consumerSecret: TWITTER_SECRET,
-            callbackURL
-        };
-        super(options);
-    }
+export class TwitterStrategy extends PassportStrategy(Strategy, STRATEGY_NAME) {
+  constructor() {
+    const callbackURL = `${BACK_URI}:${START_PORT}/${APP_PREFIX}/${TWITTER_CALLBACK_URI}`;
+    const options = {
+      consumerKey: TWITTER_KEY,
+      consumerSecret: TWITTER_SECRET,
+      callbackURL,
+    };
+    super(options);
+  }
 
-    async validate(token, tokenSecret, profile: any, done: VerifyCallback): Promise<any> {
-        console.log(JSON.stringify(profile))
-        done(null, profile);
-    }
+  async validate(
+    token,
+    tokenSecret,
+    profile: any,
+    done: VerifyCallback,
+  ): Promise<any> {
+    console.log(JSON.stringify(profile));
+    done(null, profile);
+  }
 }

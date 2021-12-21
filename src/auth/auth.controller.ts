@@ -1,11 +1,9 @@
-import { Controller, Get, Req } from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
 
 @Controller()
-export class AuthController  {
-  constructor() {}
-
+export class AuthController {
   @Get()
-  async authHome(@Req() req) {
-    return "Welcome to auth module"
+  async authHome() {
+    return 'Welcome to auth module';
   }
 }

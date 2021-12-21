@@ -12,8 +12,8 @@ export class FacebookController {
 
   @Get('facebook')
   @UseGuards(AuthGuard(FACEBOOK_GUARD_NAME))
-  async facebookAuth(@Req() req): Promise<HttpStatus> {
-    return HttpStatus.OK
+  async facebookAuth(): Promise<HttpStatus> {
+    return HttpStatus.OK;
   }
 
   @Get(FACEBOOK_CALLBACK_URI)

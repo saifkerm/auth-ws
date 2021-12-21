@@ -1,6 +1,8 @@
-require('dotenv').config();
+import { config } from 'dotenv';
 
-export const START_PORT = process.env.START_PORT || 3001
+config();
+
+export const START_PORT = process.env.START_PORT || 3001;
 export const BACK_URI = process.env.BACK_URI || '';
 export const APP_PREFIX = process.env.APP_PREFIX || 'auth';
 
@@ -18,7 +20,3 @@ export const FACEBOOK_CALLBACK_URI = process.env.FACEBOOK_CALLBACK_URI || '';
 export const FACEBOOK_CLIENT_ID = process.env.FACEBOOK_CLIENT_ID || '';
 export const FACEBOOK_CLIENT_SECRET = process.env.FACEBOOK_CLIENT_SECRET || '';
 export const FACEBOOK_GUARD_NAME = process.env.FACEBOOK_GUARD_NAME || '';
-
-
-
-
